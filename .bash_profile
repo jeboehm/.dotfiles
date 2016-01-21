@@ -24,7 +24,9 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
-alias p="cd $HOME/Projekte"
+if [ -f $HOME/.aliases ]; then
+  source $HOME/.aliases
+fi
 
 function o() {
 	if [ $# -eq 0 ]; then
