@@ -11,31 +11,19 @@ shopt -s cdspell
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh
 
 bind -f $HOME/.inputrc
-source $HOME/.prompt
 
-EDITOR="nano -w"
-PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+for file in ~/.{path,prompt,aliases,functions,exports}; do
+  [ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
+unset file
 
-if [ -d $HOME/.composer/vendor/bin ]; then
-  PATH="$HOME/.composer/vendor/bin:$PATH"
+if [ -f $(/usr/local/bin/brew --prefix)/etc/bash_completion ]; then
+  . $(/usr/local/bin/brew --prefix)/etc/bash_completion
 fi
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+# Add tab completion for `defaults read|write NSGlobalDomain`
+# You could just use `-g` instead, but I like being explicit
+complete -W "NSGlobalDomain" defaults;
 
-if [ -f $HOME/.aliases ]; then
-  source $HOME/.aliases
-fi
-
-function o() {
-	if [ $# -eq 0 ]; then
-		open .
-	else
-		open "$@"
-	fi
-}
-
-function tw() {
-	open -a TextWrangler $*
-}
+# Add `killall` tab completion for common apps
+complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
