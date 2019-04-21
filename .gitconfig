@@ -3,4 +3,4 @@
 	email = jeff@ressourcenkonflikt.de
 
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore
