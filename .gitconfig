@@ -1,0 +1,6 @@
+[user]
+	name = Jeff Boehm
+	email = jeff@ressourcenkonflikt.de
+
+[core]
+	excludesfile = ~/.gitignore_global
