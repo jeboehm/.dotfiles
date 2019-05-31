@@ -30,6 +30,11 @@ if [ -f /usr/share/bash-completion/bash_completion ]; then
   . /usr/share/bash-completion/bash_completion
 fi
 
+# fuck
+if [ -x /usr/local/bin/thefuck ]; then
+  eval $(thefuck --alias)
+fi
+
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults;
