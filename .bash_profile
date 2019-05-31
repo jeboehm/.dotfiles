@@ -17,10 +17,17 @@ for file in ~/.{path,prompt,aliases,functions,exports}; do
 done
 unset file
 
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+# Bash completion
+if [ -f /usr/local/etc/bash_completion ]; then
+  . /usr/local/etc/bash_completion
+fi
 
 if [ -f /usr/local/share/bash-completion/bash_completion ]; then
-    . /usr/local/share/bash-completion/bash_completion
+  . /usr/local/share/bash-completion/bash_completion
+fi
+
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+  . /usr/share/bash-completion/bash_completion
 fi
 
 # Add tab completion for `defaults read|write NSGlobalDomain`
