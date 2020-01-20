@@ -13,10 +13,14 @@ function phpv() {
 	brew services stop php@7.4
 	brew unlink php php@7.2 php@7.3 php@7.4
 	brew link --force --overwrite $1
-	brew services start $1
+	brew services run $1
 	valet install
 }
 
 alias php72="phpv php@7.2"
 alias php73="phpv php@7.3"
 alias php74="phpv php@7.4"
+alias ubuntu='docker run -it --rm -h ubuntu -w $PWD -v $PWD:$PWD ubuntu bash'
+alias local_dev_start="brew services run mysql@5.7 && ~/.composer/vendor/bin/valet start"
+alias local_dev_stop="brew services stop mysql@5.7 && ~/.composer/vendor/bin/valet stop"
+
