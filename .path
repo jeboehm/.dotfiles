@@ -1,4 +1,4 @@
-PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH"
+PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH"
 
 if [ -d $HOME/.composer/vendor/bin ]; then
   PATH="$HOME/.composer/vendor/bin:$PATH"
