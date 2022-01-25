@@ -1,1 +1,2 @@
-EDITOR="nano -w"
+export EDITOR="nano -w"
+export COMPOSER_MEMORY_LIMIT=-1
