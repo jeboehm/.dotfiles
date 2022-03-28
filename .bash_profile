@@ -22,6 +22,3 @@ unset file
 
 # Makefile tab completion
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" make
-
-export BASH_SILENCE_DEPRECATION_WARNING=1
-
