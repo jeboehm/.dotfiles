@@ -9,6 +9,10 @@ if [ -d $HOME/.composer/vendor/bin ]; then
   export PATH="$HOME/.composer/vendor/bin:$PATH"
 fi
 
+if [ -d $HOME/bin ]; then
+  export PATH="$HOME/bin:$PATH"
+fi
+
 if which ruby >/dev/null && which gem >/dev/null; then
   PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
