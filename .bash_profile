@@ -1,3 +1,7 @@
+if [ -r /etc/profile ]; then
+  source /etc/profile
+fi
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
