@@ -17,5 +17,12 @@ if which ruby >/dev/null && which gem >/dev/null; then
   PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
 
-export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"
+if [ -x /opt/homebrew/bin/pyenv ]; then
+  export PATH="$(pyenv root)/shims:$PATH"
+fi
+
+#export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
+#export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"
+
+export PATH="~/.platformsh/bin:$PATH"
+export PATH="/Applications/PhpStorm.app/Contents/MacOS:$PATH"
