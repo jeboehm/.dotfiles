@@ -1,14 +1,33 @@
 [user]
-	name = Jeffrey Böhm
-	email = hello@jeffrey-boehm.de
+  name = Jeffrey Böhm
+  email = hello@jeffrey-boehm.de
+  signingkey = /Users/jeff/.ssh/id_rsa.pub
 
 [core]
-	excludesfile = /Users/jeff/.gitignore
+  excludesfile = /Users/jeff/.gitignore
+
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
+
 [mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
+
 [commit]
-	template = /Users/jeff/.stCommitMsg
+  template = /Users/jeff/.stCommitMsg
+
+[init]
+  defaultBranch = main
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
+
+[pull]
+  rebase = true

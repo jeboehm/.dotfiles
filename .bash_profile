@@ -27,6 +27,10 @@ unset file
 # Makefile tab completion
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" make
 
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+
 if [ -x /opt/homebrew/bin/direnv ]; then
   eval "$(direnv hook bash)"
 fi
