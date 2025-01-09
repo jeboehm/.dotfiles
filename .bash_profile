@@ -34,7 +34,3 @@ fi
 if [ -x /opt/homebrew/bin/direnv ]; then
   eval "$(direnv hook bash)"
 fi
-
-if [ "$PS1" ]; then
-  complete -cf sudo
-fi
