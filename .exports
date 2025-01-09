@@ -1,6 +1,3 @@
 export EDITOR="nano -w"
 export COMPOSER_MEMORY_LIMIT=-1
 export BASH_SILENCE_DEPRECATION_WARNING=1
-
-export DRONE_SERVER=https://build.dev.ressourcenkonflikt.de/
-export DRONE_TOKEN=2vvgriJxQQoXhg0CtVpggrVTm1niqaIK
