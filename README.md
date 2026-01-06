@@ -1,12 +1,18 @@
-# .dotfiles
-My .dotfiles for use on OS X
+# dotfiles
 
 ## Installation
-- Clone the repository
-- Copy or symlink the files to your $HOME folder
 
-## Aliases
-If you want to add your own aliases, create them in ~/.aliases
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-## Credits
-- https://github.com/mathiasbynens/dotfiles
+git clone https://github.com/jeboehm/dotfiles.git ~/.dotfiles
+ln -s ~/.dotfiles/.zshrc ~/.zshrc
+```
+
+## System dependencies
+
+### MacOS
+
+```bash
+# none yet
+```
