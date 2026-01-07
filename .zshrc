@@ -1,5 +1,12 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+# Homebrew PATH extension
+
+if [ -d "/opt/homebrew/bin" ]; then
+	export PATH="/opt/homebrew/bin:$PATH"
+fi
+
+if [ -d "/opt/homebrew/sbin" ]; then
+	export PATH="/opt/homebrew/sbin:$PATH"
+fi
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -71,31 +78,27 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(docker docker-compose dotenv git ssh zsh-autosuggestions zsh-you-should-use)
+plugins=(direnv docker docker-compose dotenv git ssh zsh-autosuggestions zsh-you-should-use)
 
 source $ZSH/oh-my-zsh.sh
 
 # User Aliases
+
 alias p="cd ~/Projekte"
 
-# Homebrew PATH extension
+# Exports
 
-if [ -d "/opt/homebrew/bin" ]; then
-  export PATH="/opt/homebrew/bin:$PATH"
-fi
+export EDITOR="nano -w"
 
-if [ -d "/opt/homebrew/sbin" ]; then
-  export PATH="/opt/homebrew/sbin:$PATH"
-fi
+# zsh completions
 
 if [ -d "/opt/homebrew/share/zsh-completions" ]; then
-  FPATH=/opt/homebrew/share/zsh-completions:$FPATH
-  autoload -Uz compinit
-  compinit
+	FPATH=/opt/homebrew/share/zsh-completions:$FPATH
+	autoload -Uz compinit
+	compinit
 fi
 
-# Editor
-export EDITOR="nano -w"
+# Open Finder
 
 function o() {
 	if [ $# -eq 0 ]; then
