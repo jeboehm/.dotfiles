@@ -78,7 +78,12 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(direnv docker docker-compose git ssh zsh-autosuggestions zsh-you-should-use)
+plugins=(docker docker-compose git ssh zsh-autosuggestions zsh-you-should-use)
+
+# Conditionally enable direnv if it exists
+if [ -f "/opt/homebrew/bin/direnv" ]; then
+	plugins+=(direnv)
+fi
 
 source $ZSH/oh-my-zsh.sh
 
