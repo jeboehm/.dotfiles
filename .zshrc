@@ -8,6 +8,10 @@ if [ -d "/opt/homebrew/sbin" ]; then
 	export PATH="/opt/homebrew/sbin:$PATH"
 fi
 
+if [ -d "$HOME/.local/bin" ]; then
+	export PATH="$HOME/.local/bin:$PATH"
+fi
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/Documents/dotfiles/custom"
